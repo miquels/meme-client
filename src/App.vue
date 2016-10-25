@@ -5,8 +5,8 @@
         <router-link to="/" exact class="browser">RIPE Memes</router-link>
         <router-link to="/images/">Meme Images</router-link>
         <router-link v-if="!readonly" to="/createimage/">Create Image</router-link>
-        <a class="github" href="https://github.com/vuejs/" target="_blank">
-          Built with Vue.js
+        <a class="github" href="https://github.com/miquels/meme-client" target="_blank">
+          Github
         </a>
       </div>
     </div>

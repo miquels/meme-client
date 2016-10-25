@@ -1,4 +1,4 @@
-# ripememe
+# meme-client
 
 > A Vue.js project
 
