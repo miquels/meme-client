@@ -1,8 +1,10 @@
 <template>
 <div class="imageDiv" :class="{ imageDivBorder: showinfo !== null }">
-  <div class="imageDelete" v-if="showdelete !== null" @click.prevent="deleteImage">x</div>
+  <div class="imageDelete"
+    v-if="showdelete !== null && showdelete !== false"
+    @click.prevent="deleteImage">x</div>
   <meme :line1="obj.text1" :line2="obj.text2" :imgsrc="obj.imgsrc"></meme>
-  <div class="imageInfo" v-if="showinfo !== null">
+  <div class="imageInfo" v-if="showinfo !== null" @click.prevent="ignore">
     <div class="imageName">{{ obj.name }}</div>
     <div class="imageRating" v-if="showrating !== null">
       <a href="#" @click.prevent="rateDown">&#x25bd;</a>
@@ -43,6 +45,8 @@ export default {
     },
     rateDown () {
       this.$store.dispatch('rateThing', { thing: this.object, delta: -1 })
+    },
+    ignore () {
     }
   },
   computed: {

@@ -72,6 +72,7 @@ if (c === '') {
   window.startAtImages = false
 }
 Vue.http.headers.common['X-Cookie'] = 'clientuuid=' + c
+window.clientuuid = c
 
 /* eslint-disable no-new */
 new Vue({
