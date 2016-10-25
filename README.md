@@ -2,6 +2,10 @@
 
 > A Vue.js project
 
+This is the javascript frontend  code for <a href="https://ripemem.es/">ripemem.es</a>.
+
+The backend code is at <a href="https://github.com/miquels/meme-server">meme-server</a>
+
 ## Build Setup
 
 ``` bash
