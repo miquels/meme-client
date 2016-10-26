@@ -54,6 +54,7 @@ const mutations = {
 
   deleteImage (state, image) {
     image.deleted = true
+    state.images = state.images.filter((i) => i !== image)
   },
 
   rateImage (state, { image, rating }) {

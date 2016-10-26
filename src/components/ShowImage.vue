@@ -131,10 +131,12 @@ export default {
 .imageName {
   display: inline-block;
   vertical-align: middle;
+  width: 52%;
 }
 .imageRating {
   // border: 1px solid red;
   float: right;
   font-size: 1.5em;
+  width: 35;
 }
 </style>

@@ -7,7 +7,12 @@
       <span v-if="images.length === 0">
         If no images are shown yet, <a href="/createimage/">create the first one!</a>
       </span>
-    </p>
+      <br>
+      <small>
+        Note this is a work in progress - if you find any bugs, please
+        <a href="https://github.com/miquels/meme-client/issues" target=_blank>
+          file a github issue</a>.
+      </small>
   </div>
   <div class="images">
     <div v-for="img in images" class="imgdiv">

@@ -62,7 +62,7 @@ export default {
   box-sizing: border-box;
   padding: 0;
   width: 60%;
-  height: 100%;
+  max-height: 100vh;
   img {
     width: 100%;
   }
