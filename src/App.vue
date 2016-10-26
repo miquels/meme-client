@@ -29,8 +29,7 @@ export default {
     this.$store.dispatch('loadConfig')
     .then(() => { this.$store.dispatch('loadCharacters') })
     .then(() => { this.$store.dispatch('loadImages') })
-    if (this.$router.path === '/' && window.startAtImages) {
-      // window.startAtImages = false
+    if (window.location.pathname === '/' && window.startAtImages) {
       this.$router.replace('/images/')
     }
     window.startAtImages = false
