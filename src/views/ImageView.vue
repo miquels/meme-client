@@ -1,9 +1,9 @@
 <template>
   <div class="imageview">
     <p>
-      <span>{{ name }}</span>
+      <span>{{ image.name }}</span>
     </p>
-    <meme id="meme" :line1="text1" :line2="text2" :imgsrc="imgsrc">
+    <meme id="id" :line1="image.text1" :line2="image.text2" :imgsrc="image.imgsrc">
   </div>
 </template>
 
@@ -17,40 +17,34 @@ export default {
   },
   watch: {
     '$route' (to) {
-      this.setImage(to.parameters.id)
+      this.id = parseInt(to.parameters.id)
     }
   },
   mounted () {
-    this.setImage(this.$route.params.id)
+    console.log(this.$route)
+    this.id = parseInt(this.$route.params.id)
   },
   data: function () {
     return {
-      name: '',
-      imgsrc: '',
-      text1: '',
-      text2: ''
+      id: 0
     }
   },
-  methods: {
-    setImage (id) {
-      id = parseInt(id)
-      var img = this.$store.state.images.find((i) => i.id === id)
-      // console.log('found image', id, img, this.$store.state.images)
+  computed: {
+    image () {
+      var ret = { name: '', imgsrc: '', text1: '', text2: '' }
+      var img = this.$store.state.images.find((i) => i.id === this.id)
+      // console.log('found image', this.id, img, this.$store.state.images)
       if (img) {
         var ch = this.$store.state.characters
           .find(c => c.id === img.characterId)
         if (ch) {
-          this.name = ch.name
-          this.imgsrc = ch.url
-          this.text1 = img.text1
-          this.text2 = img.text2
-          return
+          ret.name = ch.name
+          ret.imgsrc = ch.url
+          ret.text1 = img.text1
+          ret.text2 = img.text2
         }
       }
-      this.name = ''
-      this.imgsrc = ''
-      this.text1 = ''
-      this.text2 = ''
+      return ret
     }
   }
 }
