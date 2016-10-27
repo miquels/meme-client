@@ -7,15 +7,15 @@
       just click on one of the characters.
     </p>
   </div>
+  <transition name="fade" mode="out-in">
   <div class="characters">
-    <div v-for="ch in characters" class="chardiv">
-      <transition name="fade" mode="out-in">
+    <div v-for="ch in characters" :key="ch.id" class="chardiv">
       <router-link :to="'/create/' + ch.id">
         <show-image showinfo :object="ch"></show-image>
       </router-link>
-    </transition>
     </div>
   </div>
+  </transition>
 </div>
 </template>
 
