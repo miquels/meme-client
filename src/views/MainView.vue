@@ -12,7 +12,8 @@
     <router-link to="/createimage/">create image</router-link>.
     <p>
     Note that you can only create and view images and characters from
-    the RIPE conference network, or from the hotel wifi.
+    the RIPE conference network, or from the hotel wifi. At least
+    most of the time, sometimes it's open to the world.
   </span>
     <p>
     There is currently no way to save an image (other than taking
