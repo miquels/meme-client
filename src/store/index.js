@@ -161,7 +161,12 @@ const actions = {
       // console.log('response', response)
       if (response.status === 200) {
         response.data.forEach(makeAbsolute)
-        response.data.sort((a, b) => a.id - b.id)
+        response.data.sort((a, b) => {
+          if (a.rating === b.rating) {
+            return b.id - a.id
+          }
+          return b.rating - a.rating
+        })
         context.commit('loadCharacters', response.data)
       }
     }).catch((response) => {
